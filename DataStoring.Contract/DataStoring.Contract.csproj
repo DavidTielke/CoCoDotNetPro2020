@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>DavidTielke.PersonManagerApp.Data.DataStoring.Contract</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Callbacks\" />
+    <Folder Include="DataClasses\" />
+  </ItemGroup>
+
+</Project>

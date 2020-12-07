@@ -6,4 +6,10 @@
     <RootNamespace>DavidTielke.PersonManagerApp.UI.ConsoleClient</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Configuration\Configuration.csproj" />
+    <ProjectReference Include="..\DataStoring\DataStoring.csproj" />
+    <ProjectReference Include="..\PersonManagement\PersonManagement.csproj" />
+  </ItemGroup>
+
 </Project>

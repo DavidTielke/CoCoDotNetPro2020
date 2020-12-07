@@ -5,4 +5,10 @@
     <RootNamespace>DavidTielke.PersonManagerApp.Logic.PersonManagement</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Configuration.Contract\Configuration.Contract.csproj" />
+    <ProjectReference Include="..\DataStoring.Contract\DataStoring.Contract.csproj" />
+    <ProjectReference Include="..\PersonManagement.Contract\PersonManagement.Contract.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -3,6 +3,6 @@
     public interface IConfigurator
     {
         void Set(string category, string key, object value);
-        TValue get<TValue>(string category, string key);
+        TValue Get<TValue>(string category, string key);
     }
 }

@@ -10,4 +10,8 @@
     <Folder Include="DataClasses\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DataClasses\DataClasses.csproj" />
+  </ItemGroup>
+
 </Project>

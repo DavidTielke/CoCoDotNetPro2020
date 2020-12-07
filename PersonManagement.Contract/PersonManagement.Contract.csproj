@@ -9,4 +9,8 @@
     <Folder Include="Callbacks\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DataClasses\DataClasses.csproj" />
+  </ItemGroup>
+
 </Project>

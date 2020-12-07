@@ -5,4 +5,8 @@
     <RootNamespace>DavidTielke.PersonManagerApp.CrossCutting.Configuration</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Configuration.Contract\Configuration.Contract.csproj" />
+  </ItemGroup>
+
 </Project>

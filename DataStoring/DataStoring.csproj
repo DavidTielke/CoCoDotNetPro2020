@@ -5,4 +5,8 @@
     <RootNamespace>DavidTielke.PersonManagerApp.Data.DataStoring</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DataStoring.Contract\DataStoring.Contract.csproj" />
+  </ItemGroup>
+
 </Project>

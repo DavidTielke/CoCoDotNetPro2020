@@ -6,6 +6,7 @@ using DavidTielke.PersonManagerApp.Data.DataStoring;
 using DavidTielke.PersonManagerApp.Data.DataStoring.Contract;
 using DavidTielke.PersonManagerApp.Logic.PersonManagement;
 using DavidTielke.PersonManagerApp.Logic.PersonManagement.Contract;
+using Ninject;
 
 namespace DavidTielke.PersonManagerApp.UI.ConsoleClient
 {
@@ -13,19 +14,28 @@ namespace DavidTielke.PersonManagerApp.UI.ConsoleClient
     {
         static void Main(string[] args)
         {
-            IConfigurator config = new Configurator();
-            config.Set("PersonManagement","AgeTreshold",18);
-            IPersonRepository repo = new PersonRepository();
-            IPersonManager manager = new PersonManager(repo, config);
+            // Kernel (K)
+            var kernel = new StandardKernel();
+
+            // Mappings (M)
+            kernel.Bind<IConfigurator>().To<Configurator>().InSingletonScope();
+            kernel.Bind<IPersonManager>().To<PersonManager>().InTransientScope();
+            kernel.Bind<IPersonRepository>().To<PersonRepository>().InTransientScope();
+
+            // Anwendung (APP)
+            var configurator = kernel.Get<IConfigurator>();
+            configurator.Set("PersonManagement", "AgeTreshold", 18);
+
+            var manager = kernel.Get<IPersonManager>();
 
             var adults = manager.GetAllAdults();
-            var children = manager.GetAllChildren();
-
             Console.WriteLine("### Erwachsene ###");
             adults.ToList().ForEach(a => Console.WriteLine(a.Name));
 
+            var children = manager.GetAllChildren();
             Console.WriteLine("### Kinder ###");
             children.ToList().ForEach(c => Console.WriteLine(c.Name));
         }
+
     }
 }

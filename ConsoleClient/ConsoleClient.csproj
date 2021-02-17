@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Configuration\Configuration.csproj" />
     <ProjectReference Include="..\DataStoring\DataStoring.csproj" />
+    <ProjectReference Include="..\DIMappings\DIMappings.csproj" />
     <ProjectReference Include="..\PersonManagement\PersonManagement.csproj" />
   </ItemGroup>
 

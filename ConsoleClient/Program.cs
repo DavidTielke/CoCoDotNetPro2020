@@ -6,6 +6,7 @@ using DavidTielke.PersonManagerApp.Data.DataStoring;
 using DavidTielke.PersonManagerApp.Data.DataStoring.Contract;
 using DavidTielke.PersonManagerApp.Logic.PersonManagement;
 using DavidTielke.PersonManagerApp.Logic.PersonManagement.Contract;
+using DIMappings;
 using Ninject;
 
 namespace DavidTielke.PersonManagerApp.UI.ConsoleClient
@@ -18,9 +19,7 @@ namespace DavidTielke.PersonManagerApp.UI.ConsoleClient
             var kernel = new StandardKernel();
 
             // Mappings (M)
-            kernel.Bind<IConfigurator>().To<Configurator>().InSingletonScope();
-            kernel.Bind<IPersonManager>().To<PersonManager>().InTransientScope();
-            kernel.Bind<IPersonRepository>().To<PersonRepository>().InTransientScope();
+            new KernelInitializer().Initialize(kernel);
 
             // Anwendung (APP)
             var configurator = kernel.Get<IConfigurator>();

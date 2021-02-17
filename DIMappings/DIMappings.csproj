@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ninject" Version="3.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Configuration.Contract\Configuration.Contract.csproj" />
+    <ProjectReference Include="..\Configuration\Configuration.csproj" />
+    <ProjectReference Include="..\DataStoring.Contract\DataStoring.Contract.csproj" />
+    <ProjectReference Include="..\DataStoring\DataStoring.csproj" />
+    <ProjectReference Include="..\PersonManagement.Contract\PersonManagement.Contract.csproj" />
+    <ProjectReference Include="..\PersonManagement\PersonManagement.csproj" />
+  </ItemGroup>
+
+</Project>
